@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block left %}
+	<div class="offset3 span4">
+		<form action="/login" method="post">
+			<div class="blank-mini"></div>
+			{% if error %}
+			<div id="loginerror">
+				<div class="alert fade in">
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+					{{ message }}
+				</div>
+			</div>
+			{% endif %}
+			<div id="login_header">
+				帐号登录
+			</div>
+			<div id="login">
+				<label>用户名</label>
+				<input type="text" name="username" id="username" class="input-xlarge" />
+				<label>密码</label>
+				<input type="password" name="password" id="password"  class="input-xlarge"/>
+				<br>
+				<input class="btn btn-success" name="commit" type="submit" value="登录" />
+			</div>
+		</form>
+		<div class="blank"></div>
+	</div>
+{% endblock %}
+
+{% block right %}
+{% endblock %}

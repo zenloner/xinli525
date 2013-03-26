@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block left %}
+	<div class="span8">
+		<br><br>
+		<div class="box">
+			<div class="cell">
+				<div class="test-title">
+					{{entry.title}}				
+				</div>
+			</div>
+			
+			<form action="/test_test" method="post">
+			{% for question in entry.questions %}
+				<div class="cell">
+					<div class="topic">
+						<h4>{{question}}</h4>
+						<div class="options">
+							{% for option in entry.options %}
+							<div class="option">
+							<input checked="true" type="radio" value="{{option}}" name="{{question}}">
+							{{option}}
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		<div class="cell">
+			<input type="hidden" name="id" value="{{id}}" />
+			<center>
+			<button	class="btn btn-large btn-success" type="submit">立即测试</button>
+			</center>
+		</div>
+		</form>
+		</div>
+	<div class="blank-mini"></div>
+	</div>
+{% endblock %}

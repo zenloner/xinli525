@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block left %}
+	<div class="offset3 span4">
+		<form action="/register" method="post">
+			<h3>创建个人帐号</h3>
+			{% if error %}
+			<div class="alert fade in">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				{{ message }}
+			</div>
+			{% endif %}
+			<label>用户名</label>
+			<input type="text" name="username" id="username" class="input-xlarge" />
+			<label>密码</label>
+			<input type="password" name="password" id="password"  class="input-xlarge"/>
+			<label>再输入一次</label>
+			<input type="password" name="confirm" id="confirm"  class="input-xlarge"/>
+			<label>Email</label>
+			<input type="text" name="email" id="email"  class="input-xlarge"/>
+			<input class="btn btn-success" name="commit" type="submit" value="创建用户" />
+		</form>
+		<div class="blank"></div>
+	</div>
+{% endblock %}
+
+{% block right %}
+{% endblock %}

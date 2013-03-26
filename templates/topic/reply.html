@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block head %}
+	{{ super() }}
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='jwysiwyg/jquery.wysiwyg.css') }}">
+	<script src="{{ url_for('static', filename='jwysiwyg/jquery.wysiwyg.js') }}"> </script>
+	<script src="{{ url_for('static', filename='myjs.js') }}"> </script>
+{% endblock %}
+
+{% block left %}
+	<div class="span8">
+		<br><br>
+		<div class="box">
+			<div class="cell">
+				<h4>{{entry.title}}</h4>
+				<p>By {{entry.author}} at {{entry.delta}}</p>
+			</div>
+			<div class="cell">
+				{{entry.content|safe}}
+			</div>
+		</div>
+		<br><br>
+		{% if number==0 %}
+		<div class="noreply">
+			目前尚无回复
+		</div>
+		{% else %}
+		<div class="box">
+			<div class="cell">
+				{{number}}回复
+			</div>
+			{% for reply in replies %}
+			<div class="cell">
+				<div class="reply-title"><span class="reply-author">{{reply.author}}</span><span class="reply-delta">{{reply.delta}}</span></div>
+				{{reply.content|safe}}	
+			</div>
+			{% endfor %}
+		</div>
+		{% endif %}
+		<br><br>
+		{% if 'login' in session %}
+		<div class="box">
+			<div class="cell">
+				现在就添加一条回复
+			</div>
+			<div class="cell">
+				<form action="/post_reply/{{entry.id}}" method="post">
+					<textarea id="reply"  name="reply"></textarea>
+					<br><br>
+					<center>
+					<button	class="btn btn-large btn-success" type="submit">发送</button>
+					</center>
+				</form>
+			</div>
+		</div>
+	<div class="blank-mini"></div>
+	{% else %}
+	<div class="blank"></div>
+	{% endif %}
+
+	</div>
+{% endblock %}

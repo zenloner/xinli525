@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block head %}
+	{{ super() }}
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='jwysiwyg/jquery.wysiwyg.css') }}">
+	<script src="{{ url_for('static', filename='jwysiwyg/jquery.wysiwyg.js') }}"> </script>
+	<script src="{{ url_for('static', filename='myjs.js') }}"> </script>
+{% endblock %}
+
+{% block left %}
+	<div class="span8" id="paper">
+	<h2>发表话题</h2>
+	<hr>
+	<h3>标题</h3>
+	<form action="/post_topic" method=post>
+	<input type="text"  value="" name="title"> 
+	<div id="editor">
+	<h3>内容</h3>
+	<textarea id="content"  name="content"></textarea>
+	<br><br>
+	<center>
+	<button	class="btn btn-large btn-success" type="submit">立即发表</button>
+	</center>
+	</div>
+	</div>
+	<form>
+{% endblock %}

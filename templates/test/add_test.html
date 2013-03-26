@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block head %}
+	{{ super() }}
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='jwysiwyg/jquery.wysiwyg.css') }}">
+	<script src="{{ url_for('static', filename='jwysiwyg/jquery.wysiwyg.js') }}"> </script>
+	<script src="{{ url_for('static', filename='myjs.js') }}"> </script>
+{% endblock %}
+
+{% block left %}
+	<div class="span8" id="paper">
+	<div class="testbox">
+	<h2>添加测试</h2>
+	<hr>
+	<form action="/post_test" method=post enctype="multipart/form-data">
+	<h3>标题</h3>
+	<input type="text"  value="" name="title"> 
+	<h3>描述</h3>
+	<textarea id="test" name="description"></textarea>
+	<br><br>
+	<h3>上传规则文件</h3>
+	<input type="file" name="file">
+	<div>
+	<center>
+	<button	class="btn btn-large btn-success" type="submit">立即添加</button>
+	</center>
+	</div>
+	</div>
+	</div>
+	<form>
+{% endblock %}

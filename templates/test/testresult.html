@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block left %}
+	<div class="span8">
+		<br><br>
+		<div class="box">
+			<div class="cell">
+				<div class="test-title">
+					{{title}}				
+				</div>
+			</div>
+
+			<div class="cell">
+				<h4>测试结果：{{result}}</h4>
+				你可能存在下面的症状：
+				{%for symptom in symptoms %}
+					{{symptom}} &nbsp;
+				{% endfor %}
+			</div>
+		</div>
+			
+	<div class="blank-mini"></div>
+	</div>
+{% endblock %}

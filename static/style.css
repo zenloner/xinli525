@@ -1,0 +1,151 @@
+hr {
+	color: gray;
+	background-color: gray;
+	height: 1px;
+}
+
+textarea#content {
+	width:600px;
+	height:400px
+}
+
+textarea#description {
+	width:600px;
+	height:150px
+}
+
+textarea#reply {
+	width:580px;
+	height:300px;
+}
+
+textarea#test {
+	width:550px;
+	height:300px;
+}
+
+
+div#editor {
+	margin-top:20px;
+	margin-bottom:20px
+}
+
+div#paper {
+	margin-top:30px;
+	margin-bottom:30px
+}
+
+div.blank {
+	margin-bottom:250px;
+}
+
+div.blank-mini {
+	margin-bottom: 90px;
+}
+
+div#login_header {
+	width: 440px;
+	height: 34px;
+	padding-top: 13px;
+	background-color: #5e7887;
+	text-align: center;
+	color: white;
+	font-size: 150%;
+	border: 1px gray solid;
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-topleft: 5px;
+}
+
+div#login {
+	padding-top: 30px;
+	padding-left: 50px;
+	padding-bottom: 30px;
+	width: 390px;
+	background-color: #ebf2f5;
+	border: 1px gray solid;
+	-webkit-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+}
+
+div#loginerror {
+	margin-left: 90px;
+}
+
+div#login label {
+	font-size: 120%;
+}
+
+.box {
+	background-color: #fff;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-box-shadow: 0px 1px 5px rgba(0, 0, 18, 0.4);
+	-webkit-box-shadow: 0px 1px 5px rgba(0, 0, 18, 0.4);
+	border-top: 1px solid #cccccf;
+	border-bottom: 2px solid #e2e2e2;
+}
+
+.testbox {
+	padding: 20px;
+	background-color: #fff;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-box-shadow: 0px 1px 5px rgba(0, 0, 18, 0.4);
+	-webkit-box-shadow: 0px 1px 5px rgba(0, 0, 18, 0.4);
+	border-top: 1px solid #cccccf;
+	border-bottom: 2px solid #e2e2e2;
+}
+
+.noreply {
+	border: 1px dotted;
+	padding: 10px;
+	text-align: center;
+}
+
+.box .cell {
+	padding: 10px;
+	border-bottom: 1px solid #e2e2e2;
+}
+
+
+.topic {
+	padding-left: 10px;
+}
+
+
+.reply-title {
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+span.reply-author {
+	color: #68808f;
+	font-weight: bold;
+	font-size: 150%;
+	padding-right: 15px;
+}
+
+span.reply-delta {
+	color: #c1d4f0;
+	font-size: 90%;
+}
+
+.test-title {
+	color: #468847;
+	font-size: 180%;
+	text-align: center;
+	padding: 10px;
+}
+
+.options {
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+.option {
+	margin-bottom: 5px;
+}

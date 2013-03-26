@@ -1,0 +1,17 @@
+<!--主题右侧开始-->
+<div class="span2 offset1">
+	<br><br>
+	<ul class="nav nav-tabs nav-stacked">
+		<li class="alert alert-success"><center><h4>&nbsp;分&nbsp;&nbsp;类</h4><center></li>
+		<li {% if pagetype=="paper" %}class="active"{% endif %}>
+		<a href="/">心理文章</a>
+		</li>
+		<li {% if pagetype=="pic" %}class="active"{% endif %}>
+		<a href="/pic">心理图片</a>
+		</li>
+		<li {% if pagetype=="topic" %}class="active"{% endif %}><a href="/topic">心理交流</a></li>
+		<li {% if pagetype=="test" %}class="active"{% endif %}><a href="/test">心理测试</a></li>
+		<li {% if pagetype=="cure" %}class="active"{% endif %}><a href="/cure">心理治疗</a></li>
+	</ul>
+</div>
+<!--主题右侧结束-->

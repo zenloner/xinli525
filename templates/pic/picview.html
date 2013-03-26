@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block left %}
+	<embed src="{{ url_for('static', filename='mp3/background.mp3') }}" height="0" width="0" loop="true"></embed> 
+	<div class="span8">
+		<h1>{{entry.title}}</h1>
+		<br>
+		{{entry.description|safe}}
+		<br>
+		{{entry.content|safe}}
+	</div>
+{% endblock %}

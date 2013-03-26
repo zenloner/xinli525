@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block left %}
+	<div class="span8">
+		<br><br>
+		<div class="box">
+			<div class="cell">
+				<div class="pull-right">
+					<a href="/add_topic" class="btn btn-small btn-success">创建新话题</a>
+				</div>
+				<div>
+					进行专业心理咨询和交流
+				</div>
+			</div>
+			{% for entry in entries %}
+				<div class="cell">
+					<div class="topic">
+						<h4><a href="/reply/{{entry.id}}">{{entry.title}}</a></h4>
+						<p>{{entry.author}}&nbsp;•&nbsp; {{entry.delta}}&nbsp;•&nbsp;最后回复来自{{entry.reply}}</p>
+					</div>
+				</div>
+			{% endfor %}
+			<!--分页开始-->
+			<div class="pagination pagination-centered">
+			  <ul>
+				{% if page==1 %}
+				<li class="disabled"><a href="">&laquo;</a></li>
+				{% else %}
+					<li><a href="/topic/{{page-1}}">&laquo;</a></li>
+				{% endif %}
+
+				{% for i in range(1, pageNumber+1) %}
+					{% if page==i %}
+					<li class="disabled"><a href="">{{i}}</a></li>
+					{% else %}
+					<li><a href="/topic/{{i}}">{{i}}</a></li>
+					{% endif %}
+				{% endfor %}
+
+				{% if page==pageNumber %}
+				<li class="disabled"><a href="">&raquo;</a></li>
+				{% else %}
+					<li><a href="/topic/{{page+1}}">&raquo;</a></li>
+				{% endif %}
+			  </ul>
+			</div>
+			<!--分页结束-->
+		</div>
+	<div class="blank-mini"></div>
+	</div>
+{% endblock %}
