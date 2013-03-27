@@ -40,15 +40,15 @@ def login():
 		c.execute("select * from user where username=%s and password=%s", (username, password))
 		rows = c.fetchall()
 		if username==None or username=="" or password==None:
-			return render_template('login.html', error=True, message=u'字段不能为空')
+			return render_template('user/login.html', error=True, message=u'字段不能为空')
 		elif len(rows) == 0:
-			return render_template('login.html', error=True, message=u'用户名或者密码不正确')
+			return render_template('user/login.html', error=True, message=u'用户名或者密码不正确')
 		else:
 			session['login'] = True
 			session['username'] = username
 			return redirect('/')
 	else:
-		return render_template('login.html')
+		return render_template('user/login.html')
 
 @app.route('/logout')
 def logout():
