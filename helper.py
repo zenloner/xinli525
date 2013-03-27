@@ -1,6 +1,8 @@
 # coding=utf-8
 import datetime, time
+from flask import url_for
 import codecs
+from config import ROOT_DIR
 
 def timegap(time1):
 	#intime = time.strptime(intimestr, "%Y-%m-%d %H:%M:%S")
@@ -22,7 +24,7 @@ def timegap(time1):
 	return retstr
 
 def fileread(filename):
-	file = codecs.open('static/test/'+filename, 'r', 'utf8')
+	file = codecs.open(ROOT_DIR+'/static/test/'+filename, 'r', 'utf8')
 	flag = ''
 	line = file.readline()
 	title = ''
