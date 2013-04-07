@@ -9,16 +9,16 @@ app.config.from_pyfile('config.cfg', silent=True)
 
 from config import *
 
-
-
-
+#open database connection
 @app.before_request
 def before_request():
     g.db = MySQLdb.connect(MYSQL_HOST, MYSQL_USER, MYSQL_PASS,
                            MYSQL_DB, port=int(MYSQL_PORT), charset='utf8')
 
+#close database connection
 @app.teardown_request
 def teardown_request(exception):
     if hasattr(g, 'db'): g.db.close()
 
+#import package
 from view import *

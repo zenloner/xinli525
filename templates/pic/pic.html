@@ -3,18 +3,25 @@
 {% block left %}
 	<div class="span8">
 		<br><br>
+		<div class="box">
+			<div class="cell">
+				<div class="test-title">
+					心理图片		
+				</div>
+			</div>
 		{% for entry in entries %}
 			<!--每个item开始-->
-			<div class="block">
-				<h2>{{entry.title}}</h2>
+			<div class="cell">
+			<div class="topic">
+				<h4>{{entry.title}}</h4>
 				{{entry.description|safe}}
 				<p><a class="btn" href="/picview?id={{entry.id}}">查看全文 &raquo;</a></p>
-				<hr />
+			</div>
 			</div>
 			<!--每个item结束-->
 		{% endfor %}
 		<!--分页开始-->
-		<div class="pagination pagination-large">
+		<div class="pagination pagination-centered">
 		  <ul>
 			{% if page==1 %}
 			<li class="disabled"><a href="">&laquo;</a></li>
@@ -38,5 +45,7 @@
 		  </ul>
 		</div>
 		<!--分页结束-->
+		</div>
+	<div class="blank-mini"></div>
 	</div>
 {% endblock %}

@@ -1,3 +1,6 @@
+body {
+	background-color: #e1dad0;
+}
 hr {
 	color: gray;
 	background-color: gray;
@@ -87,6 +90,18 @@ div#login label {
 	-webkit-box-shadow: 0px 1px 5px rgba(0, 0, 18, 0.4);
 	border-top: 1px solid #cccccf;
 	border-bottom: 2px solid #e2e2e2;
+}
+
+.mybox {
+	background-color: #fff;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-box-shadow: 0px 1px 5px rgba(0, 0, 18, 0.4);
+	-webkit-box-shadow: 0px 1px 5px rgba(0, 0, 18, 0.4);
+}
+.registerbox {
+	padding-left: 20px;
+	background-color: #fff;
 }
 
 .testbox {
